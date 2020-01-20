@@ -1,0 +1,44 @@
+MODULE Primes;
+(* Простые числа *)
+
+IMPORT
+   Out, In;
+
+CONST
+   w = 6;
+   x = -w;
+
+VAR
+   i, n, d: INTEGER;
+   c: INTEGER;
+
+BEGIN
+   n := 10000;
+(*
+   In.Open;
+   In.Int(n);
+*)
+
+   c := 0;
+   i := 2;
+   WHILE i <= n DO
+      d := 2;
+      WHILE i MOD d # 0  DO
+          d := d + 1;
+      END;
+      IF d = i THEN
+(*
+         IF c MOD w = 0 THEN
+            Out.Ln
+         END;
+         Out.Int(i, w);
+*)
+         INC(c);
+      END;
+      i := i + 1;
+   END;
+   Out.Ln();
+   Out.Int(c, 0);
+   Out.Ln();
+
+END Primes.
